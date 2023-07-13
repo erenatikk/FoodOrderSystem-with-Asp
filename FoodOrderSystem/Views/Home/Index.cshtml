@@ -1,0 +1,82 @@
+﻿@model List<FoodOrderSystem.Models.Restaurant>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Hoş Geldiniz!</h2>
+                <p>Burada restoranları ve menülerini bulabilir, online olarak sipariş verebilirsiniz.</p>
+                <div class="container">
+                    <h2>Favori Restoranlar</h2>
+                    <div class="row">
+                        @foreach (var restaurant in Model)
+                        {
+                            <div class="col-md-4">
+                                <div class="card">
+                                    @*<img src="@restaurant.ImageUrl" class="card-img-top" alt="@restaurant.Name">*@
+                                    <div class="card-body">
+                                        <h5 class="card-title">@restaurant.Name</h5>
+@*                                        <p class="card-text">@restaurant.Description</p>
+                                    *@ <a class="btn btn-primary" href="@Url.Action("ShowProducts", "Home", new { id = restaurant.Id })">Restorana Git</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                @section content {  
+                    <h2>Yemek Kategorileri</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Kategori 1</h5>
+                                    <p class="card-text">Kategori 1 ile ilgili açıklama veya detaylar.</p>
+                                    <a href="#" class="btn btn-primary">Detayları Gör</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Kategori 2</h5>
+                                    <p class="card-text">Kategori 2 ile ilgili açıklama veya detaylar.</p>
+                                    <a href="#" class="btn btn-primary">Detayları Gör</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Kategori 3</h5>
+                                    <p class="card-text">Kategori 3 ile ilgili açıklama veya detaylar.</p>
+                                    <a href="#" class="btn btn-primary">Detayları Gör</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

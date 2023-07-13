@@ -1,0 +1,33 @@
+﻿@model List<Order>
+<link rel="stylesheet" href="/css/sidebar.css">
+<h2>Siparişler</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product ID</th>
+            <th>User ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.ProductId</td>
+                <td>@order.UserId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="sidebar">
+    <a href="@Url.Action("AddProduct", "Admin")">Ürün Ekleme</a>
+    <a href="@Url.Action("RemoveProduct", "Admin")">Ürün Silme</a>
+    <a href="@Url.Action("AddRestaurant", "Admin")">Restoran Ekleme</a>
+    <a href="@Url.Action("RemoveRestaurant", "Admin")">Restoran Silme</a>
+    <a href="@Url.Action("ShowOrders", "Admin")">Siparişleri Göster</a>
+    <a href="@Url.Action("Index", "Admin")">Panel</a>
+
+
+</div>

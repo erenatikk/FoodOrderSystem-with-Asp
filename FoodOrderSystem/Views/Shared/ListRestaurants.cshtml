@@ -1,0 +1,14 @@
+﻿@model List<FoodOrderSystem.Models.Restaurant>
+
+<h1>Restoranlar</h1>
+
+<ul>
+    @foreach (var restaurant in Model)
+    {
+        <li>
+            <a href="@Url.Action("ShowProducts", "Home", new { id = restaurant.Id })">@restaurant.Name</a>
+        </li>
+    }
+</ul>
+
+

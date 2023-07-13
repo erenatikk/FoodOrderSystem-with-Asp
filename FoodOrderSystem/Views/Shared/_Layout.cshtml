@@ -1,0 +1,64 @@
+﻿@using FoodOrderSystem.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Yemek Siparişi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index","Home")">InFoodCome</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    @*@{
+                        var isAuthenticated = Context.User.Identity.IsAuthenticated;
+                        var userName = isAuthenticated ? User.Identity.Name : string.Empty;
+                    }*@
+
+                    <ul class="navbar-nav ml-auto">
+                        @if (!string.IsNullOrEmpty(ViewBag.LoggedInUserName))
+                        {
+                            <a asp-controller="Home" asp-action="ListRestaurants" class="nav-link">Restoranlar</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Hoş Geldiniz, @ViewBag.LoggedInUserName</a>
+                            </li>
+                            <li class="nav-item">
+                                <form id="logoutForm" asp-controller="Login" asp-action="Logout" method="post" class="form-inline">
+                                    <button type="submit" class="btn btn-link nav-link">Çıkış Yap</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Login", "Login")">Giriş Yap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Register", "Register")">Kayıt Ol</a>
+                            </li>
+                        }
+                    </ul>
+                </ul>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            @RenderSection("content", false)
+        </main>
+    </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+</html>

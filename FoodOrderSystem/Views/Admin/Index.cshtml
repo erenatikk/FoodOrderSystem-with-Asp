@@ -1,0 +1,33 @@
+﻿@model AdminViewModel
+
+
+<link rel="stylesheet" href="/css/sidebar.css">
+
+
+
+
+
+<h2>Admin Panel</h2>
+
+<div class="card">
+    <h3>İstatistikler</h3>
+    <ul>
+        <li>Toplam Ürün Sayısı: @Model.TotalProducts</li>
+        <li>Toplam Kullanıcı Sayısı: @Model.TotalUsers</li>
+        <li>Toplam Sipariş Sayısı: @Model.TotalOrders</li>
+    </ul>
+</div>
+
+    <div class="sidebar">
+        <a href="@Url.Action("AddProduct", "Admin")">Ürün Ekleme</a>
+        <a href="@Url.Action("RemoveProduct", "Admin")">Ürün Silme</a>
+        <a href="@Url.Action("AddRestaurant", "Admin")">Restoran Ekleme</a>
+        <a href="@Url.Action("RemoveRestaurant", "Admin")">Restoran Silme</a>
+        <a href="@Url.Action("ShowOrders", "Admin")">Siparişleri Göster</a>
+    <a href="@Url.Action("Index", "Admin")">Panel</a>
+
+        
+    </div>
+
+    </div>
+

@@ -1,0 +1,18 @@
+﻿@model FoodOrderSystem.ViewModels.LoginViewModel
+
+
+<h2>Giriş Yap</h2>
+
+<form asp-action="Login" method="post">
+    <div id="error-message" class="text-danger">@ViewBag.ErrorMessage</div>
+
+    <div class="form-group">
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" id="username" name="Username" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Şifre</label>
+        <input type="password" id="password" name="Password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+</form>

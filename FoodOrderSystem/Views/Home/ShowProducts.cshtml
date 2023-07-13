@@ -1,0 +1,13 @@
+﻿@model BuyProductViewModel
+
+<form asp-controller="Product" asp-action="Buy" method="post">
+    <div class="container">
+        <h1>Restoran Ürünleri</h1>
+        <select asp-for="ProductId" asp-items="@(new SelectList(Model.Products, "Key", "Value"))" class="form-control"></select>
+        
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Buy</button>
+    </div>
+</form>
+

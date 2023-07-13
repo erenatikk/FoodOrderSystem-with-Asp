@@ -1,0 +1,29 @@
+﻿@model AdminViewModel
+<link rel="stylesheet" href="/css/sidebar.css">
+<h2>Restoran Ekleme</h2>
+
+<div class="add-restaurant">
+    <form action="@Url.Action("AddRestaurant", "Admin")" method="post">
+        <div class="mb-3">
+            <label for="restaurantName">Restoran Adı:</label>
+            <input class="form-control" type="text" id="restaurantName" name="restaurantName" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="restaurantLocation">Restoran Lokasyonu:</label>
+            <input type="text" id="RestaurantAddress" name="RestaurantAddress" required>
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+<div class="sidebar">
+    <a href="@Url.Action("AddProduct", "Admin")">Ürün Ekleme</a>
+    <a href="@Url.Action("RemoveProduct", "Admin")">Ürün Silme</a>
+    <a href="@Url.Action("AddRestaurant", "Admin")">Restoran Ekleme</a>
+    <a href="@Url.Action("RemoveRestaurant", "Admin")">Restoran Silme</a>
+    <a href="@Url.Action("ShowOrders", "Admin")">Siparişleri Göster</a>
+    <a href="@Url.Action("Index", "Admin")">Panel</a>
+
+</div>

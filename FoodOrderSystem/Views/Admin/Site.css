@@ -1,0 +1,12 @@
+﻿.admin-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+}
+
+.admin-menu-item {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+

@@ -1,0 +1,22 @@
+﻿@model AdminViewModel
+<link rel="stylesheet" href="/css/sidebar.css">
+<h2>Ürün Silme</h2>
+
+<div class="remove-product-form">
+    <form action="@Url.Action("RemoveProduct", "Admin")" method="post">
+        <label for="productId">Ürün ID:</label>
+        <input type="text" id="productId" name="productId" required>
+
+        <button type="submit" class="btn btn-primary">Sil</button>
+    </form>
+</div>
+<div class="sidebar">
+    <a href="@Url.Action("AddProduct", "Admin")">Ürün Ekleme</a>
+    <a href="@Url.Action("RemoveProduct", "Admin")">Ürün Silme</a>
+    <a href="@Url.Action("AddRestaurant", "Admin")">Restoran Ekleme</a>
+    <a href="@Url.Action("RemoveRestaurant", "Admin")">Restoran Silme</a>
+    <a href="@Url.Action("ShowOrders", "Admin")">Siparişleri Göster</a>
+    <a href="@Url.Action("Index", "Admin")">Panel</a>
+
+
+</div>
